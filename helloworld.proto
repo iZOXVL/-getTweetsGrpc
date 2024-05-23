@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "grpc-go-example/helloworld";
+
+package helloworld;
+
+service TweetService {
+    rpc GetTweets(TweetRequest) returns (TweetTextResponse);
+}
+
+message TweetRequest {
+    string tweet_id = 1;
+}
+
+message TweetTextResponse {
+    repeated string tweet_texts = 1;
+}
